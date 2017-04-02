@@ -1,0 +1,39 @@
+<div>
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':true,'animation-class': 'toast-top-center'}"></toaster-container>
+</div>
+
+<br><!--"#/api/user/mywishlist"-->
+<br>
+</br>
+<div ng-controller="home1Controller">
+<div></div>
+
+<form ng-submit="getImg();tTitle()">
+
+   <fieldset>
+      <input type="url" placeholder="Enter URL here" size=50 ng-model="s_url" required="" />
+      <button class="btn btn-primary">Search</button>
+    </fieldset>
+ 
+</form>
+
+
+<br>
+<pre>
+Select thumbnail:
+<div  ng-repeat="img in getimg">
+<div class="box">
+    <div class="boxInner">
+<a href="">
+<img ng-src="{{img.img}}"class="img-thumbnail" ng-class="{'selected':$index == selectedIndex}" ng-click="toggle();setUrl(img.img);imgClicked($index)" >
+</a> 
+</div>
+</div>
+</div>
+ 
+</div>
+</pre>
+
+</div>
+
+
